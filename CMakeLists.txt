@@ -4,7 +4,7 @@ project(GildedRose)
 include_directories(include)
 file(GLOB GILDEDROSE_SF "src/*")
 
-add_library(gildedRose STATIC ${GILDEDROSE_SF})
+add_library(gildedRose SHARED ${GILDEDROSE_SF})
 
 enable_testing()
 find_package(GTest REQUIRED)
