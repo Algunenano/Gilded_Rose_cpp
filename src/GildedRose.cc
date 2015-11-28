@@ -17,7 +17,7 @@ void updateDefault(Item& _item)
 void updateCheese(Item& _item)
 {
     _item.quality = min (_item.quality +1, 50);
-    if (_item.sellIn < 0)
+    if (_item.sellIn <= 0)
     {
         _item.quality = min (_item.quality +1, 50);
     }
