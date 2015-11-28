@@ -78,6 +78,15 @@ TEST(GildedRoseTest, Cheese_increases_twice_passed_selldate) {
     EXPECT_EQ(22, app.items[0].quality);
 }
 
+TEST(GildedRoseTest, Cheese_increases_twice_passed_selldate_including0) {
+    vector<Item> items;
+    items.push_back(Item("Aged Brie", 0, 20));
+    GildedRose app(items);
+    app.updateQuality();
+    EXPECT_EQ(-1, app.items[0].sellIn);
+    EXPECT_EQ(22, app.items[0].quality);
+}
+
 TEST(GildedRoseTest, Sulfuras_never_sold_nor_decreases_quality) {
     vector<Item> items;
     items.push_back(Item("Sulfuras, Hand of Ragnaros", -5, 80));
