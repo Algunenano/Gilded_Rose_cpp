@@ -34,15 +34,15 @@ void updateConcert(Item& _item)
 {
     if (_item.sellIn > 10)
     {
-        _item.quality++;
+        _item.quality = min (_item.quality +1, 50);
     } else {
         if (_item.sellIn > 5)
         {
-            _item.quality += 2;
+            _item.quality = min (_item.quality +2, 50);
         } else {
             if (_item.sellIn > 0)
             {
-                _item.quality += 3;
+                _item.quality = min (_item.quality +3, 50);
             } else {
                 _item.quality = 0;
             }

@@ -167,3 +167,12 @@ TEST(GildedRoseTest, Backstage_increases_after) {
     EXPECT_EQ(-6, app.items[0].sellIn);
     EXPECT_EQ(0, app.items[0].quality);
 }
+
+TEST(GildedRoseTest, Backstage_increases_upto_50) {
+    vector<Item> items;
+    items.push_back(Item("Backstage passes to a TAFKAL80ETC concert", 10, 48));
+    GildedRose app(items);
+    app.updateQuality();
+    EXPECT_EQ(9, app.items[0].sellIn);
+    EXPECT_EQ(50, app.items[0].quality);
+}
